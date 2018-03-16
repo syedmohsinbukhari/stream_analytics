@@ -18,10 +18,12 @@ class LocalStreamListener(tw.StreamListener):
             text = status.text
             user_id = status.user.id
             date_time = status.created_at.strftime('%m/%d/%Y %H:%M:%S')
+            tweet_id = status.id
             f.write(str({
                 'user_id': user_id,
                 'date_time':date_time,
-                'tweet_content': text
+                'tweet_content': text,
+                'tweet_id': tweet_id
                 }) + '\n')
 
 class Streamer():
