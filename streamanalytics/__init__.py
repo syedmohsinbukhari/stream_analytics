@@ -1,3 +1,3 @@
-from twitterstreamer.streamer import Streamer
-from twitterstreamer import utils
-from twitterstreamer.plotter import Plotter
+from streamanalytics.streamer import Streamer
+from streamanalytics import utils
+from streamanalytics.plotter import Plotter

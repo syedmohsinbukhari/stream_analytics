@@ -1,7 +1,7 @@
 # simulate that hotelinformatics is installed at PYTHON_PATH
 import context
 
-import twitterstreamer as ts
+import streamanalytics as ts
 
 def main():
     credentials = ts.utils.file_lines_to_array('scripts/conf/api_keys.txt')
