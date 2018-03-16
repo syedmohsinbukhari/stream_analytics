@@ -1,4 +1,5 @@
-R8rKs0MctcqJFh24Fm7enf3Nf
-LdMZUiXXABmvzeId6N5sj5f4jR4lPcXNkvARAwoU5rHvb2ohVB
-705107678-Y7bdIg7o5WvxPWEJF81XT9LSmrq1nBBElQVSmheM
-8QRbf2pkdkC8e6vvTROAUQOUwm39ZRvQMwMBoBFtGh0nm
+<consumer_token>
+<consumer_secret>
+<access_token>
+<access_token_secret>
+
