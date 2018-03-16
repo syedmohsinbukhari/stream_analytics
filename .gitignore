@@ -1,0 +1,12 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pickle files
+*.pkl
+
+# Linux swap files
+*.swp
+
+# Project specific (.txts)
