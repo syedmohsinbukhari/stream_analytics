@@ -1,4 +1,4 @@
-# simulate that streamanalytics is installed as a python packages
+# simulate that streamanalytics is installed as a python package
 import context
 
 import streamanalytics as ts
