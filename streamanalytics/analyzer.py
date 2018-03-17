@@ -2,6 +2,7 @@ import json
 import os
 import datetime
 import math
+import matplotlib.pyplot as plt
 
 class DataAnalyzer:
     def __init__(self):
@@ -76,7 +77,7 @@ class DataAnalyzer:
 
         return time_hist
 
-    def get_histogram(self, fname, time_field_name, bin_width,
+    def get_histo(self, fname, time_field_name, bin_width,
                         convert_to_json=False):
         f_dir_name = os.path.dirname(os.path.abspath(fname))
         f_name = fname
@@ -98,13 +99,22 @@ class DataAnalyzer:
             out_f.write(time_hist_json)
         return time_hist_json
 
-    def plot_hist(self):
-        pass
-        
+    def plot_histo(self, time_hist_json):
+        time_hist = json.loads(time_hist_json)
+        new_hist = {}
+        for k in time_hist.keys():
+            v = time_hist[k]
+            new_hist[v['bin_start']] = v['count']
+
+        plt.bar(range(len(new_hist)), list(new_hist.values()), align='center')
+        plt.xlabel('time (minutes)')
+        plt.ylabel('number of tweets')
+        plt.show()
 
 def main():
     analyzer = DataAnalyzer()
-    analyzer.get_histogram('data/data.txt', 'date_time', bin_width=60)
+    time_hist = analyzer.get_histo('data/data.txt', 'date_time', bin_width=60)
+    analyzer.plot_histo(time_hist)
 
 if __name__ == '__main__':
     main()
