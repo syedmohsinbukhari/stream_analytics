@@ -22,7 +22,7 @@ This is a repository for a course project 'CS 5312 - Big Data Analytics'
     3. tag3
 
 #### How to run built in scripts
-##### twitter_streamer.py
+##### For example, twitter_streamer.py can be run using the following commands.
 
 ```shell
 cd /path/to/stream_analytics/scripts

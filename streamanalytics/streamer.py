@@ -1,5 +1,6 @@
 import tweepy as tw
 import os
+import json
 
 class LocalStreamListener(tw.StreamListener):
 
@@ -11,6 +12,8 @@ class LocalStreamListener(tw.StreamListener):
 
     def save_status(self, status):
         path_str = os.path.join( os.getcwd(), 'data' )
+        if not os.path.exists(path_str):
+            os.makedirs(path_str)
         fname = os.path.join(path_str, 'data.txt')
 
         with open(fname,'a') as f:
@@ -18,12 +21,13 @@ class LocalStreamListener(tw.StreamListener):
             user_id = status.user.id
             date_time = status.created_at.strftime('%m/%d/%Y %H:%M:%S')
             tweet_id = status.id
-            f.write(str({
+            json_obj = json.dumps({
                 'user_id': user_id,
                 'date_time':date_time,
                 'tweet_content': text,
                 'tweet_id': tweet_id
-                }) + '\n')
+                }, ensure_ascii=False)
+            f.write(json_obj + os.linesep)
 
 class Streamer():
     def __init__(self):
