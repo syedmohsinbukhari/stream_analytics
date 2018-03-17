@@ -9,7 +9,7 @@ This is a repository for a course project 'CS 5312 - Big Data Analytics'
 - Make sure you have the prerequisites
 - Clone this repository (`git clone https://github.com/syedmohsinbukhari/stream_analytics.git` )
 
-### How to use this code?
+### How to use this code
 #### Prepare configuration files
 - Make sure you have your credentials in this file (`/path/to/stream_analytics/scripts/conf/api_keys.txt`). This file should contain the following four lines with appropriate replacement of credentials acquired from `apps.twitter.com`.<br/>*Note: Replace '<' and '>' too.*
     1. \<consumer_token\>
