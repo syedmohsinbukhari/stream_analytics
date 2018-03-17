@@ -4,7 +4,6 @@ import os
 class LocalStreamListener(tw.StreamListener):
 
     def on_status(self, status):
-        # tweet_date_time = status.created_at.strftime('%m/%d/%Y %H:%M:%S')
         self.save_status(status)
 
     def on_error(self, status_code):
@@ -27,12 +26,22 @@ class LocalStreamListener(tw.StreamListener):
                 }) + '\n')
 
 class Streamer():
+    def __init__(self):
+        self.streamlistener = LocalStreamListener()
+
     def __call__(self, credentials, tags):
-        streamlistener = LocalStreamListener()
         api = self.oauther(credentials[0], credentials[1],
                             credentials[2], credentials[3])
-        stream = tw.Stream(auth = api.auth, listener=streamlistener)
+        stream = tw.Stream(auth = api.auth, listener=self.streamlistener)
         stream.filter(track=tags, async=True)
+
+        cond = True
+        while cond:
+            inp = input('Press q then Enter to quit streaming: ')
+            cond = (not inp == 'q')
+
+        stream.disconnect()
+        print('Exiting Stream')
 
     def oauther(self, consumer_key, consumer_secret,
                     access_token, access_token_secret):
