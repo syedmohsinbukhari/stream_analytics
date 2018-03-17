@@ -10,5 +10,13 @@ def main():
     streamer = ts.Streamer()
     streamer(credentials, tags)
 
+    cond = True
+    while cond:
+        inp = input('Press q then Enter to quit streaming: ')
+        cond = (not inp == 'q')
+
+    streamer.disconnect()
+    print('Exiting Stream')
+
 if __name__ == '__main__':
     main()

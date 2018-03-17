@@ -32,16 +32,11 @@ class Streamer():
     def __call__(self, credentials, tags):
         api = self.oauther(credentials[0], credentials[1],
                             credentials[2], credentials[3])
-        stream = tw.Stream(auth = api.auth, listener=self.streamlistener)
-        stream.filter(track=tags, async=True)
+        self.stream = tw.Stream(auth = api.auth, listener=self.streamlistener)
+        self.stream.filter(track=tags, async=True)
 
-        cond = True
-        while cond:
-            inp = input('Press q then Enter to quit streaming: ')
-            cond = (not inp == 'q')
-
-        stream.disconnect()
-        print('Exiting Stream')
+    def disconnect(self):
+        self.stream.disconnect()
 
     def oauther(self, consumer_key, consumer_secret,
                     access_token, access_token_secret):
