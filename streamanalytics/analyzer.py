@@ -1,6 +1,6 @@
 import json
 
-class Plotter:
+class DataAnalyzer:
     def __init__(self):
         pass
 

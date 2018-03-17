@@ -1,4 +1,4 @@
-# simulate that hotelinformatics is installed at PYTHON_PATH
+# simulate that streamanalytics is installed as a python packages
 import context
 
 import streamanalytics as ts
