@@ -25,6 +25,6 @@ This is a repository for a course project 'CS 5312 - Big Data Analytics'
 ##### twitter_streamer.py
 
 ```shell
-cd /path/to/stream_analytics
-python3 scripts/twitter_streamer.py
+cd /path/to/stream_analytics/scripts
+python3 twitter_streamer.py
 ```
