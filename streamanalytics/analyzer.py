@@ -104,12 +104,20 @@ class DataAnalyzer:
         new_hist = {}
         for k in time_hist.keys():
             v = time_hist[k]
-            new_hist[v['bin_start']] = v['count']
+            new_hist[int(k)] = v['count']
 
         plt.bar(range(len(new_hist)), list(new_hist.values()), align='center')
         plt.xlabel('time (minutes)')
         plt.ylabel('number of tweets')
         plt.show()
+
+    def plot_histo_from_file(self, fname):
+        time_hist = json.dumps('')
+        with open(fname) as f:
+            for line in f:
+                time_hist = line
+                break
+        self.plot_histo(time_hist)
 
 def main():
     analyzer = DataAnalyzer()
