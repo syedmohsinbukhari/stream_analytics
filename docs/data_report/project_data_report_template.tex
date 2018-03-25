@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+
+\usepackage{geometry, amsmath, amsthm, latexsym, amssymb, graphicx, hyperref, setspace, color, wasysym}
+\usepackage{enumerate}
+\geometry{margin=1in, headsep=0.25in}
+
+\parindent 0in
+\parskip 12pt
+
+\title{Title of Your project}
+\author{Your names and Roll Numbers}
+\begin{document}
+\maketitle
+		
+\section{General Information about data}
+Discuss here briefly. 
+\begin{itemize}
+	\item Source of data. Not the source where you downloaded from, but the actual source where data is generated. 
+	\item Give your source of data, where you downloaded it form, e.g. a URL where you downloaded  or crawled data from.
+	\item Name some of the other work done on this paper, e.g. which paper you read to get idea about this datasets, or is the dataset provided by Kaggle, (how many people competed).
+	\item 	What type of data is it? e.g. graph, text, tabular.
+	\item What does a data object represent (a user, a book, a node in a graph, a student)
+	\item Have you downloaded all datasets? If answer is "NO", give the reason. 
+	\item What is/are the size(s) of data on disk?
+	\item What are the dimensions of data?
+	\item Other size related properties to explain?
+	
+\end{itemize}
+
+\section{Data Format, Types and Description}
+Without repetition, give the answer of following questions regarding above mentioned heading. You can use table format. 
+	\begin{itemize}
+		\item What is/are file types? like \texttt{.csv} etc.
+		\item What are the attributes in each dataset?
+
+		\item Detailed description of data: 
+		\begin{itemize}
+			\item What is size of data (number of instances), 
+			\item dimensionality of data, 
+			\item data types of each feature, description of features. 
+			\item If you are working on graph data, then for instance number of nodes, number of edges, directed (or undirected) etc. \item You have to do it for each data set; if you are using more than one type of data
+			\item You may use a table here if the description takes too long.
+	\end{itemize}
+		\item Also give the answer of any other (missing) questions falling in this section, that you think is appropriate
+	\end{itemize}
+
+\section{Data preprocessing}
+ 	\begin{itemize}
+ 		\item Does your data set require preprocessing?
+ 		\item If you have done preprocessing on your data sets, mention what were those.
+ 		\item Did your data set contain missing values?
+ 		\item For instance if you are working on text data, you must have removed stop words, if the data is in XML format, you must have converted into relational data etc.
+ 		\item Which technique(s) did you apply for filling the missing values?
+ 	\end{itemize}  
+	
+\section{EDA}
+	\begin{itemize}
+		\item You should report average, median, minimum, maximum, variance of numerical features.
+		\item 	If you are working on graphs you should report for each graph the average degree, density, maximum degree, minimum degree etc.
+		\item You have to plot histograms/bar graphs, box-and-whisker diagrams, five-number summaries, scatter plots too see correlation between attributes.
+		\item If you are using multiple data sets, you have to repeat the above points for each dataset.
+	\end{itemize}
+  
+\end{document}

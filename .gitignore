@@ -11,3 +11,10 @@ __pycache__/
 
 # Project specific (.txts)
 *.txt
+
+# LaTeX files
+*.pdf
+*.aux
+*.log
+*.out
+*.synctex.gz
