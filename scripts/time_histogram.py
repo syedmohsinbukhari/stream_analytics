@@ -9,7 +9,7 @@ def main():
     analyzer.plot_histo(time_hist)
 
     # OR directly from file
-    analyzer.plot_histo_from_file('data/data_hist.txt')
+    # analyzer.plot_histo_from_file('data/data_hist.txt')
 
 if __name__ == '__main__':
     main()

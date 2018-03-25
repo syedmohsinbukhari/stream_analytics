@@ -10,8 +10,8 @@
 \title{Personalized Highlights Recommendation System}
 \author{Muhammad Talha Khan \{Roll \#18100267 \}\\Ahmed Muqaddas \{Roll \#16030039 \}\\Syed Mohsin Bukhari \{Roll \#16030038 \}}
 \begin{document}
-	\maketitle
-	
+\maketitle
+
 \section{General Information about data}
 \paragraph{}
 When there is a cricket or football match going on, there are tweets related to certain hashtags. This data is generated on user's Twitter profile. This kind of data can be streamed live when the matches are going on. Twitter's Streaming API is for this purpose.
@@ -26,7 +26,7 @@ A single data object corresponds to a tweet which is a sentiment score of a user
 The data is in form of streams. Data is captured on the go. That's nature of the problem. However, the dataset needed for sentiment analysis is available and downloaded. The size of one data stream is typically 2MB to 10MB. The overall size of the data is not known and irrelevant because the analysis that is performed needs a stream of data and does not require to data other than what the algorithm produces itself.
 \paragraph{}
 Each stream of data is four dimensional. One dimension corresponds to users, the other to different streams, the third to time and the fourth to sentiment embedded in the tweet. However, for preprocessing each data object in order to perform sentiment analysis, the dimension of data is the number of words in vocabulary. This is typically between ten to thirty thousand. For now, we will stick to the lower bound of the range, i.e. ten thousand. Other size related properties include the length of each tweet, which Twitter allows to be 240 characters. This means that a typical Tweet has between 25 to 50 words.
-	
+
 \section{Data Format, Types and Description}
 \begin{itemize}
 	\item The file type is \textit{.txt} for both streamed data and unstructured text data.
@@ -39,7 +39,7 @@ Each stream of data is four dimensional. One dimension corresponds to users, the
 	\end{itemize}
 	\item Detailed description of data\\
 	There are typically ten to twenty thousand tweets for a PSL cricket match. The data for Personalized Highlights Recommendation System needs to be four dimensional. However, each data object from the stream needs to be preprocessed in order to represent it in the desired four dimensions (users, streams, time, sentiment).
-		
+	
 	\begin{itemize}
 		\item Data types and description of each feature:\\
 		\begin{tabular}[ht]{|l|l|l|}
@@ -84,8 +84,13 @@ There might be some noise in the data. In order to deal with that, there can be 
 \section{EDA}
 There are no numerical attributes in this dataset for which measures of centrality and spread need to calculated at this stage of the analysis. However, histograms for number of tweets can be plotted along time axis. It is clearly visible that there are some humps in the histogram. These events correspond to the real time highlights when something important happened in the match.
 
-\begin{figure}
-	\includegraphics[scale=0.5]{figs\match_00.jpg}
+\begin{figure}[ht]
+	\includegraphics[scale=0.35]{/home/elcid/workspace/stream_analytics/docs/figs/match_01.jpg}
+	\caption{Match 1 (16th March, 2018)}
 \end{figure}
-
+\begin{figure}[ht]
+	\includegraphics[scale=0.35]{/home/elcid/workspace/stream_analytics/docs/figs/match_02.jpg}
+	\caption{Match 2 (21st March, 2018)}
+\end{figure}
+	
 \end{document}
