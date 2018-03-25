@@ -13,7 +13,6 @@ __pycache__/
 *.txt
 
 # LaTeX files
-*.pdf
 *.aux
 *.log
 *.out
