@@ -4,7 +4,7 @@ import datetime
 import math
 import matplotlib.pyplot as plt
 
-class DataAnalyzer:
+class Histogrammer:
     def __init__(self):
         pass
 
@@ -120,7 +120,7 @@ class DataAnalyzer:
         self.plot_histo(time_hist)
 
 def main():
-    analyzer = DataAnalyzer()
+    analyzer = Histogrammer()
     time_hist = analyzer.get_histo('data/data.txt', 'date_time', bin_width=60)
     analyzer.plot_histo(time_hist)
 
