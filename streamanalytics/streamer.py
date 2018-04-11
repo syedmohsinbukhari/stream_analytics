@@ -34,8 +34,9 @@ class Streamer():
         self.streamlistener = LocalStreamListener()
 
     def __call__(self, credentials, tags):
-        api = self.oauther(credentials[0], credentials[1],
+        auth = self.oauther(credentials[0], credentials[1],
                             credentials[2], credentials[3])
+        api = tw.API(auth)
         self.stream = tw.Stream(auth = api.auth, listener=self.streamlistener)
         self.stream.filter(track=tags, async=True)
 
@@ -46,9 +47,8 @@ class Streamer():
                     access_token, access_token_secret):
         auth = tw.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(access_token, access_token_secret)
-        api = tw.API(auth)
 
-        return api
+        return auth
 
 def main():
     # an example of how to run the class defined above
