@@ -1,11 +1,11 @@
 # simulate that streamanalytics is installed as a python package
 import context
 
-import streamanalytics as ts
+import streamanalytics as sa
 
 def main():
-    histo = ts.Histogrammer()
-    
+    histo = sa.Histogrammer()
+
     # From raw data file
     time_hist = histo.get_histo('data/data.txt', 'date_time', bin_width=10)
     histo.plot_histo(time_hist)

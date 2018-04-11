@@ -1,13 +1,13 @@
 # simulate that streamanalytics is installed as a python package
 import context
 
-import streamanalytics as ts
+import streamanalytics as sa
 
 def main():
-    credentials = ts.utils.file_lines_to_array('scripts/conf/api_keys.txt')
-    tags = ts.utils.file_lines_to_array('scripts/conf/tags.txt')
+    credentials = sa.utils.file_lines_to_array('scripts/conf/api_keys.txt')
+    tags = sa.utils.file_lines_to_array('scripts/conf/tags.txt')
 
-    streamer = ts.Streamer()
+    streamer = sa.Streamer()
     streamer(credentials, tags)
 
     cond = True
