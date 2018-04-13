@@ -160,6 +160,7 @@ class Extender():
         for arg in args:
             rlstatus = rlstatus[arg]
 
+        logging.info("Fetched rate limit status. %s", rlstatus)
         return rlstatus
 
 def main():
