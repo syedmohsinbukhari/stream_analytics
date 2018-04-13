@@ -47,14 +47,19 @@ class Extender():
                 logging.info("Updating rate limit status")
                 rlstatus = self.rate_limit_status('resources', 'statuses',
                                                     '/statuses/lookup')
+                logging.info("Updated rate limit status %s", rlstatus)
                 remaining = rlstatus['remaining']
                 limit = rlstatus['limit']
                 reset = rlstatus['reset']
 
+                cnt = 1
+                time.sleep(1)
+
             # if too many requests are sent then wait till rate limit is reset
             if cnt > limit:
-                logging.warning("Rate limit is reached. Waiting till reset.")
                 now = time.time()
+                logging.warning("Rate limit is reached. Waiting till reset. " +
+                                "%s seconds", reset-now+1)
                 if reset > now:
                     time.sleep(reset-now+1)
                 cnt = 1
@@ -65,8 +70,9 @@ class Extender():
             self.save_tweets(full_tweets, output_fname)
 
             logging.info("Updated %s tweets till now", tw_cnt)
-
             time.sleep(wait_per_request)
+
+        logging.info("Done extending tweets")
 
     def read_tweet_ids(self, fname, num_tweets=float('Inf')):
         """Reads a certain number of lines with each call from file
