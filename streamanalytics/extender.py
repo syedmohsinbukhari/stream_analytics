@@ -49,7 +49,6 @@ class Extender():
                 time.sleep(1)
                 rlstatus = self.rate_limit_status('resources', 'statuses',
                                                     '/statuses/lookup')
-                logging.info("Updated rate limit status %s", rlstatus)
                 remaining = rlstatus['remaining']
                 limit = rlstatus['limit']
                 reset = rlstatus['reset']
@@ -57,7 +56,7 @@ class Extender():
                 cnt = 1
 
             # if too many requests are sent then wait till rate limit is reset
-            if cnt > limit:
+            if cnt > remaining:
                 now = time.time()
                 logging.warning("Rate limit is reached. Waiting till reset. " +
                                 "%s seconds", reset-now+10)
