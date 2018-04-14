@@ -44,7 +44,7 @@ class Extender():
             tw_cnt += len_tw_set
 
             now = time.time()
-            if (now > reset) or (random.random() > 0.1):
+            if (now > reset) or (random.random() < 0.1):
                 logging.info("Updating rate limit status")
                 time.sleep(1)
                 rlstatus = self.rate_limit_status('resources', 'statuses',
