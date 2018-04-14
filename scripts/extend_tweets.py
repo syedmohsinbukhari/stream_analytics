@@ -30,8 +30,7 @@ def main():
     credentials = sa.utils.file_lines_to_array('scripts/conf/api_keys.txt')
 
     extender = sa.Extender(credentials)
-    # extender('data/data.txt', 'data/data_extended.txt', num_tweets=100)
-    extender.rate_limit_status('resources', 'statuses', '/statuses/lookup')
+    extender('data/data.txt', 'data/data_extended.txt', num_tweets=100)
 
 if __name__ == '__main__':
     main()

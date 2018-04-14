@@ -3,6 +3,7 @@ import os
 import json
 import time
 import logging
+import random
 
 class Extender():
     def __init__(self, credentials):
@@ -43,8 +44,9 @@ class Extender():
             tw_cnt += len_tw_set
 
             now = time.time()
-            if now > reset:
+            if (now > reset) or (random.random() > 0.1):
                 logging.info("Updating rate limit status")
+                time.sleep(1)
                 rlstatus = self.rate_limit_status('resources', 'statuses',
                                                     '/statuses/lookup')
                 logging.info("Updated rate limit status %s", rlstatus)
@@ -53,15 +55,14 @@ class Extender():
                 reset = rlstatus['reset']
 
                 cnt = 1
-                time.sleep(1)
 
             # if too many requests are sent then wait till rate limit is reset
             if cnt > limit:
                 now = time.time()
                 logging.warning("Rate limit is reached. Waiting till reset. " +
-                                "%s seconds", reset-now+1)
+                                "%s seconds", reset-now+10)
                 if reset > now:
-                    time.sleep(reset-now+1)
+                    time.sleep(reset-now+10)
                 cnt = 1
 
             tweet_ids = self.extract_tweet_ids(tweets_set)
