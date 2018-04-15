@@ -1,6 +1,7 @@
 import tweepy as tw
 import os
 import json
+import logging
 
 class LocalStreamListener(tw.StreamListener):
 
@@ -8,7 +9,7 @@ class LocalStreamListener(tw.StreamListener):
         self.save_status(status)
 
     def on_error(self, status_code):
-        print(status_code)
+        logging.info(status_code)
 
     def save_status(self, status):
         path_str = os.path.join( os.getcwd(), 'data' )

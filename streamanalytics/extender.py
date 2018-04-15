@@ -10,7 +10,7 @@ class Extender():
         auth = self.oauther(credentials[0], credentials[1],
                             credentials[2], credentials[3])
         self.api = tw.API(auth)
-        logging.debug("Initiated object of class Extender")
+        logging.info("Initiated object of class Extender")
 
     def __call__(self, input_fname, output_fname, num_tweets=100,
                     wait_per_request=0):
